@@ -1,0 +1,12 @@
+repositories {    
+    google()
+    jcenter()
+    flatDir {
+        dirs 'src/main/libs'
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation(name: 'it4r', ext: 'aar')
+}

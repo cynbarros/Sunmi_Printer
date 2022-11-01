@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="br.com.itfast.plugins.it4r"
+        version="1.0.0"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>CordovaIT4RPlugin</name>
+	<js-module name="CordovaIT4RPlugin"
+	           src="www/CordovaIT4RPlugin.js">
+		<clobbers target="cordova.plugins.CordovaIT4RPlugin"/>
+	</js-module>
+	<platform name="android">
+	<framework src="src/build.gradle" custom="true" type="gradleReference" />
+	    <resource-file src="src/libs/it4r.aar" target="libs/it4r.aar" />
+		<config-file parent="/*"
+		             target="res/xml/config.xml">
+			<feature name="CordovaIT4RPlugin">
+				<param name="android-package"
+				       value="br.com.itfast.plugins.it4r.CordovaIT4RPlugin"/>
+			</feature>
+		</config-file>
+		<config-file parent="/*"
+		             target="AndroidManifest.xml"/>
+		<source-file src="src/android/CordovaIT4RPlugin.java"
+		             target-dir="src/br/com/itfast/plugins/it4r/CordovaIT4RPlugin"/>
+	</platform>
+</plugin>
